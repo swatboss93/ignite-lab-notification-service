@@ -1,0 +1,62 @@
+{
+	"info": {
+		"_postman_id": "04c87ea7-fed1-4b59-a977-5d24b7d5d4e5",
+		"name": "Ignite Lab Notification",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8905623"
+	},
+	"item": [
+		{
+			"name": "Notifications",
+			"item": [
+				{
+					"name": "List notifcations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/notifications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"notifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create notification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"recipientId\": \"{{$guid}}\",\r\n    \"content\": \"content\",\r\n    \"category\": \"category\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/notifications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"notifications"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
