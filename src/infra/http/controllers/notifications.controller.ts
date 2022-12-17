@@ -13,7 +13,7 @@ export class NotificationsController {
     const { notification } = await this.sendNotification.execute({
       recipientId,
       content,
-      category
+      category,
     });
 
     return { notification };
