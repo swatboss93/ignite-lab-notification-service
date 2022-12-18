@@ -18,6 +18,10 @@ export class InMemoryNotificationsRepository
     return notification;
   }
 
+  async countManyByRecipientId(recipientId: string): Promise<number> {
+    throw new Error('Method not implemented.');
+  }
+
   async create(notification: Notification) {
     this.notifications.push(notification);
   }
