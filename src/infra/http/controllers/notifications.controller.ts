@@ -32,7 +32,7 @@ export class NotificationsController {
     return { notification: NotificationViewModel.toHTTP(notification) };
   }
 
-  @Get('count/from/:recipientId')
+  @Get('from/:recipientId/count')
   async countFromRecipient(
     @Param('recipientId') recipientId: string,
   ): Promise<{ count: number }> {
