@@ -10,25 +10,6 @@
 			"name": "Notifications",
 			"item": [
 				{
-					"name": "List notifcations",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/notifications",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"notifications"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Create notification",
 					"request": {
 						"method": "POST",
@@ -43,14 +24,108 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/notifications",
-							"protocol": "http",
+							"raw": "{{base_url}}/notifications",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "3000",
 							"path": [
 								"notifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Count recipient notifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/notifications/from/{{recipient_id}}/count",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"notifications",
+								"from",
+								"{{recipient_id}}",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get recipient notifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/notifications/from/{{recipient_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"notifications",
+								"from",
+								"{{recipient_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read notification",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/notifications/{{notification_id}}/read",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"notifications",
+								"{{notification_id}}",
+								"read"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unread notification",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/notifications/{{notification_id}}/unread",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"notifications",
+								"{{notification_id}}",
+								"unread"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel notification",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/notifications/{{notification_id}}/cancel",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"notifications",
+								"{{notification_id}}",
+								"cancel"
 							]
 						}
 					},
