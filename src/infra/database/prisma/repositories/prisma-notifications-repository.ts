@@ -41,6 +41,13 @@ export class PrismaNotificationsRepository implements NotificationsRepository {
   }
 
   async save(notification: Notification): Promise<void> {
-    throw new Error('Method not implemented.');
+    const raw = PrismaNotificationMapper.toPrisma(notification);
+
+    await this.prismaService.notification.update({
+      where: {
+        id: raw.id,
+      },
+      data: raw,
+    });
   }
 }
