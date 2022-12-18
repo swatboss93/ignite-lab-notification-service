@@ -27,7 +27,7 @@ describe('Cancel notification', () => {
 
     expect(() => {
       return cancelNotification.execute({
-        notificationId: 'invalid-id'
+        notificationId: 'invalid-id',
       });
     }).rejects.toThrow(NotificationNotFound);
   });
